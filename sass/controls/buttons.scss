@@ -1,0 +1,31 @@
+$button-bg: map-get($colors, accent);
+
+.button {
+    display: inline-block;
+    padding: ($bit * 2) ($bit * 8);
+    color: white;
+    background-color: $button-bg;
+    border: none;
+    border-radius: $global-radius;
+    font-family: $global-font;
+    font-size: map-get($font-sizes, small);
+    font-weight: 400;
+    line-height: map-get($font-sizes, default);
+    box-shadow: $global-shadow;
+    cursor: pointer;
+    transition: all 250ms ease;
+
+    &:hover {
+        outline: none;
+        background-color: saturate(adjust-hue(lighten($button-bg, 15%), 5%), 25%);
+        box-shadow: $global-shadow-rise;
+    }
+    &:active {
+        outline: none;
+        box-shadow: $global-shadow-press;
+    }
+    &:focus:not(:active):not(:hover) {
+        outline: none;
+        box-shadow: $global-shadow, 0 0 0 2px rgba(map-get($colors, primary), .5);
+    }
+}

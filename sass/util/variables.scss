@@ -3,4 +3,16 @@ $bit: .5rem;
 $colors: (
     primary: #001aff,
     accent: #ff0012,
-)
+    light-gray: #f5f5f5,
+);
+
+$font-sizes: (
+    small: 1.25rem,
+    default: 1.5rem,
+    large: 2.5rem,
+);
+
+$global-radius: 2px;
+$global-shadow: 2px 5px 20px -5px rgba(map-get($colors, accent), .8);
+$global-shadow-rise: 2px 10px 25px -5px rgba(map-get($colors, accent), .6);
+$global-shadow-press: 2px 5px 20px -5px rgba(map-get($colors, accent), .9);

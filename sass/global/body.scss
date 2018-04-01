@@ -1,5 +1,7 @@
 body {
     margin: 0;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: $global-font;
+    font-size: map-get($font-sizes, default);
     font-weight: 300;
+    line-height: 2.5rem;
 }

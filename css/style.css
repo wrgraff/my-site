@@ -1,8 +1,27 @@
-@import url("https://fonts.googleapis.com/css?family=Maven+Pro:500|Ubuntu:300");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono:700|Ubuntu:300,400&subset=cyrillic");
+.visibility-hidden {
+  visibility: hidden;
+  overflow: hidden;
+  width: 0;
+  height: 0; }
+
+p {
+  margin: 0; }
+  p:not(:last-child) {
+    margin-bottom: 1rem; }
+
+* {
+  box-sizing: border-box; }
+
+img {
+  max-width: 100%; }
+
 body {
   margin: 0;
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: 300; }
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 2.5rem; }
 
 html, body {
   height: 100%;
@@ -12,10 +31,93 @@ html, body {
   min-height: 100%;
   display: grid;
   grid-template-columns: 208px auto;
-  grid-template-rows: 120px auto 120px; }
+  grid-template-rows: fit-content(120px) auto 120px; }
   .page-main .page-aside {
     grid-row: 1 / span 3; }
 
 .page-aside {
   padding: 0.5rem;
   background-color: #001aff; }
+
+.page-header {
+  display: flex;
+  align-items: center;
+  padding: 3.5rem 3.5rem 3.5rem 0; }
+  .page-header .page-header-thing {
+    margin-right: 2rem;
+    margin-left: -2rem;
+    filter: drop-shadow(7px 7px 7px rgba(255, 0, 18, 0.3)); }
+    .page-header .page-header-thing img {
+      display: block; }
+  .page-header .page-header-title {
+    color: #001aff;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    font-family: "Ubuntu Mono", sens-serif; }
+  .page-header .page-header-contact {
+    margin-left: auto;
+    color: #ff0012;
+    border: none;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    cursor: pointer;
+    transition: all 250ms ease; }
+
+.page-body {
+  padding: 0.5rem 4rem; }
+  .page-body .page-body-section {
+    position: relative;
+    max-width: 60rem;
+    padding: 3.5rem 7.5rem 3.5rem; }
+    .page-body .page-body-section:before {
+      content: '';
+      position: absolute;
+      left: 15rem;
+      right: -5rem;
+      top: 0;
+      bottom: 0;
+      background-color: #f5f5f5;
+      z-index: -1;
+      transform: skewX(22deg); }
+    .page-body .page-body-section .page-body-section-img {
+      position: absolute;
+      right: -200px;
+      bottom: -50px;
+      width: 300px;
+      box-shadow: 2px 5px 20px -5px rgba(255, 0, 18, 0.8); }
+      .page-body .page-body-section .page-body-section-img img {
+        display: block; }
+    .page-body .page-body-section .page-body-section-backward {
+      position: absolute;
+      right: -300px;
+      z-index: -2;
+      top: 10px;
+      width: 300px;
+      transform: rotate(55deg); }
+
+.button {
+  display: inline-block;
+  padding: 1rem 4rem;
+  color: white;
+  background-color: #ff0012;
+  border: none;
+  border-radius: 2px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  box-shadow: 2px 5px 20px -5px rgba(255, 0, 18, 0.8);
+  cursor: pointer;
+  transition: all 250ms ease; }
+  .button:hover {
+    outline: none;
+    background-color: #ff4f4d;
+    box-shadow: 2px 10px 25px -5px rgba(255, 0, 18, 0.6); }
+  .button:active {
+    outline: none;
+    box-shadow: 2px 5px 20px -5px rgba(255, 0, 18, 0.9); }
+  .button:focus:not(:active):not(:hover) {
+    outline: none;
+    box-shadow: 2px 5px 20px -5px rgba(255, 0, 18, 0.8), 0 0 0 2px rgba(0, 26, 255, 0.5); }

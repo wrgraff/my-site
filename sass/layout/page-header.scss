@@ -1,0 +1,32 @@
+.page-header {
+    display: flex;
+    align-items: center;
+    padding: ($bit * 7) ($bit * 7) ($bit * 7) 0;
+
+    .page-header-thing {
+        margin-right: $bit * 4;
+        margin-left: $bit * -4;
+        filter: drop-shadow(7px 7px 7px rgba(map-get($colors, accent), .3));
+
+        img {
+            display: block;
+        }
+    }
+    .page-header-title {
+        color: map-get($colors, primary);
+        font-size: map-get($font-sizes, large);
+        line-height: map-get($font-sizes, large);
+        font-family: $header-font;
+    }
+    .page-header-contact {
+        margin-left: auto;
+        color: map-get($colors, accent);
+        border: none;
+        font-family: $global-font;
+        font-size: map-get($font-sizes, small);
+        font-weight: 400;
+        line-height: map-get($font-sizes, default);
+        cursor: pointer;
+        transition: all 250ms ease;
+    }
+}

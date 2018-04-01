@@ -7,7 +7,7 @@ html, body {
     min-height: 100%;
     display: grid;
     grid-template-columns: 208px auto;
-    grid-template-rows: 120px auto 120px;
+    grid-template-rows: fit-content(120px) auto 120px;
 
     .page-aside {
         grid-row: 1 / span 3;

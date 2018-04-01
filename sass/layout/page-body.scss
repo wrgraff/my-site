@@ -1,0 +1,41 @@
+.page-body {
+    padding: ($bit) ($bit * 8);
+
+    .page-body-section {
+        position: relative;
+        max-width: 60rem;
+        padding: ($bit * 7) ($bit * 15) ($bit * 7);
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: $bit * 30;
+            right: $bit * -10;
+            top: 0;
+            bottom: 0;
+            background-color: map-get($colors, light-gray);
+            z-index: -1;
+            transform: skewX(22deg);
+        }
+
+        .page-body-section-img {
+            position: absolute;
+            right: -200px;
+            bottom: -50px;
+            width: 300px;
+            box-shadow: $global-shadow;
+
+            img {
+                display: block;
+            }
+        }
+        .page-body-section-backward {
+            position: absolute;
+            right: -300px;
+            z-index: -2;
+            top: 10px;
+            width: 300px;
+            transform: rotate(55deg);
+        }
+    }
+}
