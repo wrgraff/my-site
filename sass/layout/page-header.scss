@@ -4,12 +4,24 @@
     padding: ($bit * 7) ($bit * 7) ($bit * 7) 0;
 
     .page-header-thing {
+        display: flex;
         margin-right: $bit * 4;
-        margin-left: $bit * -4;
-        filter: drop-shadow(7px 7px 7px rgba(map-get($colors, accent), .3));
+        margin-left: $bit * -2.5;
+        transform: skewX(26deg);
 
-        img {
+        &:before, &:after {
+            content: '';
             display: block;
+            background-color: map-get($colors, accent);
+            box-shadow: 5px 5px 18px rgba(map-get($colors, accent), .3);
+        }
+        &:before {
+            width: 32px;
+            height: 57px;
+        }
+        &:after {
+            width: 12px;
+            height: 25px;
         }
     }
     .page-header-title {

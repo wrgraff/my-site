@@ -1,31 +1,43 @@
-$button-bg: map-get($colors, accent);
-
 .button {
-    display: inline-block;
-    padding: ($bit * 2) ($bit * 8);
-    color: white;
-    background-color: $button-bg;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    color: black;
+    background-color: transparent;
     border: none;
-    border-radius: $global-radius;
-    font-family: $global-font;
-    font-size: map-get($font-sizes, small);
+    font-family: $header-font;
+    font-size: map-get($font-sizes, default);
     font-weight: 400;
-    line-height: map-get($font-sizes, default);
-    box-shadow: $global-shadow;
     cursor: pointer;
-    transition: all 250ms ease;
+    z-index: 1;
 
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -6px;
+        display: block;
+        height: 4px;
+        background-color: map-get($colors, accent);
+        opacity: .5;
+        z-index: -1;
+        transition: bottom 250ms ease, background-color 250ms ease, height 250ms ease;
+    }
+
+    &:focus {
+        outline: none;
+
+        &:after {
+            opacity: 1;
+            bottom: -10px;
+        }
+    }
     &:hover {
-        outline: none;
-        background-color: saturate(adjust-hue(lighten($button-bg, 15%), 5%), 25%);
-        box-shadow: $global-shadow-rise;
+        &:after {
+            height: 14px;
+            bottom: -4px;
+        }
     }
-    &:active {
-        outline: none;
-        box-shadow: $global-shadow-press;
-    }
-    &:focus:not(:active):not(:hover) {
-        outline: none;
-        box-shadow: $global-shadow, 0 0 0 2px rgba(map-get($colors, primary), .5);
-    }
+
 }

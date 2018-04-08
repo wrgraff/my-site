@@ -1,0 +1,18 @@
+.section-box {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-left: 0;
+    background-color: map-get($colors, light-gray);
+
+    .section-box-header {
+        flex-shrink: 0;
+        width: $bit * 20;
+        margin-left: $bit * 7;
+        text-align: right;
+        text-transform: lowercase;
+        color: map-get($colors, medium-gray);
+    }
+    .section-box-body {
+        margin-left: -$section-shift;
+    }
+}
