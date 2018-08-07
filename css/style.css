@@ -7,6 +7,24 @@
   margin: 0;
   padding: 0; }
 
+h1 {
+  font-size: 2.25rem; }
+
+h2 {
+  font-size: 2rem; }
+
+h3 {
+  font-size: 1.75rem; }
+
+h4 {
+  font-size: 1.5rem; }
+
+h5 {
+  font-size: 1.25rem; }
+
+h6 {
+  font-size: 1rem; }
+
 h1, h2, h3, h4, h5, h6 {
   margin: 1.5rem 0 1rem;
   font-family: "Ubuntu Mono", sens-serif;
@@ -110,6 +128,38 @@ html, body {
       margin: 0; }
   .section-box .section-body {
     margin-left: -10rem; }
+
+.scills-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2rem;
+  margin: 0;
+  padding: 0.5rem 0;
+  list-style: none; }
+
+.scills-list-item {
+  position: relative;
+  padding-left: 3.5rem; }
+
+.scills-list-item-level {
+  position: absolute;
+  left: 0;
+  color: #001aff;
+  font-family: "Ubuntu Mono", sens-serif;
+  font-size: 1.25rem;
+  line-height: 1; }
+  .scills-list-item-level::after {
+    content: '/10';
+    color: #dbdbdb; }
+
+.scills-list-item-name {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  text-transform: lowercase; }
+
+.scills-list-item-description {
+  font-size: 1rem;
+  line-height: 1.6; }
 
 .button {
   position: relative;
