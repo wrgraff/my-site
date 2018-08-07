@@ -1,18 +1,26 @@
+$section-box-shift: $bit * 10;
+
 .section-box {
     display: flex;
     flex-direction: row-reverse;
-    padding-left: 0;
+    margin-left: $section-box-shift;
+    padding-left: $section-box-shift;
+    padding-right: $section-box-shift;
     background-color: map-get($colors, light-gray);
 
     .section-box-header {
         flex-shrink: 0;
         width: $bit * 20;
-        margin-left: $bit * 7;
+        margin-left: $section-box-shift;
         text-align: right;
         text-transform: lowercase;
         color: map-get($colors, medium-gray);
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+        }
     }
     .section-box-body {
-        margin-left: -$section-shift;
+        margin-left: $section-box-shift * -2;
     }
 }
