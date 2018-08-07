@@ -8,7 +8,7 @@ $section-box-shift: $bit * 10;
     padding-right: $section-box-shift;
     background-color: map-get($colors, light-gray);
 
-    .section-box-header {
+    .section-header {
         flex-shrink: 0;
         width: $bit * 20;
         margin-left: $section-box-shift;
@@ -20,7 +20,7 @@ $section-box-shift: $bit * 10;
             margin: 0;
         }
     }
-    .section-box-body {
+    .section-body {
         margin-left: $section-box-shift * -2;
     }
 }
