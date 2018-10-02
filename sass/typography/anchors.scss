@@ -1,0 +1,9 @@
+a {
+    text-decoration: none;
+    color: map-get($colors, primary);
+    transition: color 250ms ease-in-out;
+
+    &:hover {
+        color: map-get($colors, accent);
+    }
+}

@@ -1,0 +1,84 @@
+$works-item-shift: $bit * 2;
+
+.works-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: $bit * 4;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    counter-reset: works;
+}
+.works-list-item {
+    position: relative;
+    padding-left: $works-item-shift;
+    font-size: map-get($font-sizes, tiny);
+    font-weight: map-get($font-weights, normal);
+    line-height: 1.6;
+
+    counter-increment: works;
+
+    &::before {
+        content: counter(works);
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: map-get($colors, primary);
+        font-family: $header-font;
+        // font-weight: map-get($font-weights, bold)
+    }
+}
+.works-list-item-title {
+}
+.works-list-item-anchor {
+    color: map-get($colors, dark-gray);
+    font-family: $header-font;
+    font-weight: map-get($font-weights, normal);
+    cursor: pointer;
+    z-index: 1;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    &:hover {
+        color: map-get($colors, dark-gray);
+    }
+}
+.works-list-item-button {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -6px;
+        display: block;
+        height: 4px;
+        background-color: map-get($colors, dark-gray);
+        opacity: .5;
+        transition: bottom 250ms ease, background-color 250ms ease, height 250ms ease;
+    }
+
+    .works-list-item-anchor:focus & {
+        outline: none;
+
+        &::before {
+            opacity: 1;
+            bottom: -10px;
+        }
+    }
+    .works-list-item-anchor:hover & {
+        &::before {
+            height: 10px;
+            bottom: -4px;
+        }
+    }
+}

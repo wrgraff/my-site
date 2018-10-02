@@ -8,8 +8,12 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./css'))
         .pipe(livereload());
 });
+gulp.task('html', function () {
+    return gulp.src('*.html').pipe(livereload());
+});
 
 gulp.task('sass:watch', function () {
     livereload.listen();
     gulp.watch(['./sass/**/*.scss', './sass/*/*.scss'], ['sass']);
+    gulp.watch(['./**/*.html'], ['html']);
 });

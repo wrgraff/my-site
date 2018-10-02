@@ -11,7 +11,7 @@
     cursor: pointer;
     z-index: 1;
 
-    &:after {
+    &::after {
         content: '';
         position: absolute;
         left: 0;
@@ -28,13 +28,13 @@
     &:focus {
         outline: none;
 
-        &:after {
+        &::after {
             opacity: 1;
             bottom: -10px;
         }
     }
     &:hover {
-        &:after {
+        &::after {
             height: 14px;
             bottom: -4px;
         }

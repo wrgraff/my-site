@@ -31,6 +31,13 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
   font-weight: 400; }
 
+a {
+  text-decoration: none;
+  color: #001aff;
+  transition: color 250ms ease-in-out; }
+  a:hover {
+    color: #ff0012; }
+
 p {
   margin: 0; }
   p:not(:last-child) {
@@ -129,6 +136,68 @@ html, body {
   .section-box .section-body {
     margin-left: -10rem; }
 
+.works-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: works; }
+
+.works-list-item {
+  position: relative;
+  padding-left: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  counter-increment: works; }
+  .works-list-item::before {
+    content: counter(works);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #001aff;
+    font-family: "Ubuntu Mono", sens-serif; }
+
+.works-list-item-anchor {
+  color: #888;
+  font-family: "Ubuntu Mono", sens-serif;
+  font-weight: 400;
+  cursor: pointer;
+  z-index: 1; }
+  .works-list-item-anchor::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0; }
+  .works-list-item-anchor:hover {
+    color: #888; }
+
+.works-list-item-button {
+  position: relative; }
+  .works-list-item-button::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    display: block;
+    height: 4px;
+    background-color: #888;
+    opacity: .5;
+    transition: bottom 250ms ease, background-color 250ms ease, height 250ms ease; }
+  .works-list-item-anchor:focus .works-list-item-button {
+    outline: none; }
+    .works-list-item-anchor:focus .works-list-item-button::before {
+      opacity: 1;
+      bottom: -10px; }
+  .works-list-item-anchor:hover .works-list-item-button::before {
+    height: 10px;
+    bottom: -4px; }
+
 .scills-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -173,7 +242,7 @@ html, body {
   font-weight: 400;
   cursor: pointer;
   z-index: 1; }
-  .button:after {
+  .button::after {
     content: '';
     position: absolute;
     left: 0;
@@ -187,9 +256,9 @@ html, body {
     transition: bottom 250ms ease, background-color 250ms ease, height 250ms ease; }
   .button:focus {
     outline: none; }
-    .button:focus:after {
+    .button:focus::after {
       opacity: 1;
       bottom: -10px; }
-  .button:hover:after {
+  .button:hover::after {
     height: 14px;
     bottom: -4px; }
